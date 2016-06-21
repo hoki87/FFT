@@ -1,0 +1,15 @@
+# Output products list for <fft>
+X:\LTEFFT\LTE_FFT\src\core\xilinx\fft_flist.txt
+_xmsgs\pn_parser.xmsgs
+fft.asy
+fft.gise
+fft.ngc
+fft.sym
+fft.v
+fft.veo
+fft.xco
+fft.xise
+fft\doc\xfft_ds260.pdf
+fft\doc\xfft_v7_1_readme.txt
+fft\doc\xfft_v7_1_vinfo.html
+fft_xmdf.tcl

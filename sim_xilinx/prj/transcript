@@ -1,0 +1,59 @@
+# Reading C:/questa_sim64_10.1c/tcl/vsim/pref.tcl 
+# //  Questa Sim-64
+# //  Version 10.1c win64 Jul 28 2012
+# //
+# //  Copyright 1991-2012 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# do {fft_tb.fdo} 
+# QuestaSim-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module fft
+# -- Compiling module glbl
+# 
+# Top level modules:
+# 	fft
+# 	glbl
+# QuestaSim-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module preproc
+# 
+# Top level modules:
+# 	preproc
+# QuestaSim-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module postproc
+# 
+# Top level modules:
+# 	postproc
+# QuestaSim-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module fft_source_bfm
+# 
+# Top level modules:
+# 	fft_source_bfm
+# QuestaSim-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module LTE_FFT
+# 
+# Top level modules:
+# 	LTE_FFT
+# QuestaSim-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module fft_tb
+# 
+# Top level modules:
+# 	fft_tb
+# QuestaSim-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module glbl
+# 
+# Top level modules:
+# 	glbl
+# vsim -L xilinxcorelib_ver -L unisims_ver -L unimacro_ver -L secureip -lib work -voptargs=\"+acc\" -t 1ps work.fft_tb glbl 
+# ** Note: (vsim-3812) Design is being optimized...
+# 
+# ** Error: ../../src/testbench/fft_tb.v(75): Module 'clock_source' is not defined.
+# ** Error: ../../src/testbench/fft_tb.v(83): Module 'reset_source' is not defined.
+# Optimization failed
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./fft_tb.fdo PAUSED at line 33

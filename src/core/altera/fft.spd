@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="simulation/submodules/fft_fft_ii_0_opt_twi5.hex"
+   type="HEX"
+   library="fft_ii_0" />
+ <file
+   path="simulation/submodules/fft_fft_ii_0_opt_twi1.hex"
+   type="HEX"
+   library="fft_ii_0" />
+ <file
+   path="simulation/submodules/fft_fft_ii_0_opt_twr4.hex"
+   type="HEX"
+   library="fft_ii_0" />
+ <file
+   path="simulation/submodules/fft_fft_ii_0_opt_twr5.hex"
+   type="HEX"
+   library="fft_ii_0" />
+ <file
+   path="simulation/submodules/fft_fft_ii_0_opt_twr1.hex"
+   type="HEX"
+   library="fft_ii_0" />
+ <file
+   path="simulation/submodules/fft_fft_ii_0_opt_twi2.hex"
+   type="HEX"
+   library="fft_ii_0" />
+ <file
+   path="simulation/submodules/fft_fft_ii_0_opt_twi3.hex"
+   type="HEX"
+   library="fft_ii_0" />
+ <file
+   path="simulation/submodules/fft_fft_ii_0_opt_twr2.hex"
+   type="HEX"
+   library="fft_ii_0" />
+ <file
+   path="simulation/submodules/fft_fft_ii_0_opt_twi4.hex"
+   type="HEX"
+   library="fft_ii_0" />
+ <file
+   path="simulation/submodules/fft_fft_ii_0_opt_twr3.hex"
+   type="HEX"
+   library="fft_ii_0" />
+ <file
+   path="simulation/submodules/fft_fft_ii_0.vo"
+   type="VERILOG"
+   library="fft_ii_0" />
+ <file path="simulation/fft.v" type="VERILOG" />
+ <topLevel name="fft" />
+ <deviceFamily name="cyclonev" />
+</simPackage>

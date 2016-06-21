@@ -1,0 +1,8 @@
+/sim_altera/prj/*.bak
+/sim_altera/prj/db
+/sim_altera/prj/incremental_db
+/sim_altera/prj/output_files
+/sim_altera/prj/lte_fft_nativelink_simulation.rpt
+/sim_xilinx/scripts/work
+/sim_altera/script/libraries
+/sim_altera/script/modelsim.ini_new

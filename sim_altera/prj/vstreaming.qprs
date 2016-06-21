@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ip>
+ <presets version="12.1">
+  <preset
+     name="vstreaming"
+     kind="altera_fft_ii"
+     version="All"
+     description="direction: bir; data flow: variable streaming">
+   <parameter name="data_flow" value="Variable Streaming" />
+   <parameter name="in_order" value="Natural" />
+   <parameter name="out_width" value="16" />
+   <parameter name="num_engines" value="1" />
+   <parameter name="length" value="2048" />
+   <parameter name="out_order" value="Natural" />
+   <parameter name="twid_width" value="16" />
+   <parameter name="direction" value="Bi-directional" />
+   <parameter name="data_rep" value="Fixed Point" />
+   <parameter name="in_width" value="16" />
+   <parameter name="engine_arch" value="Quad Output" />
+  </preset>
+ </presets>
+</ip>

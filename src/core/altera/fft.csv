@@ -1,0 +1,28 @@
+# system info fft on 2016.06.18.23:22:27
+system_info:
+name,value
+DEVICE,5CEBA4F17A7
+DEVICE_FAMILY,Cyclone V
+GENERATION_ID,1466263314
+#
+#
+# Files generated for fft on 2016.06.18.23:22:27
+files:
+filepath,kind,attributes,module,is_top
+simulation/fft.v,VERILOG,,fft,true
+simulation/submodules/fft_fft_ii_0_opt_twi5.hex,HEX,,fft_fft_ii_0,false
+simulation/submodules/fft_fft_ii_0_opt_twi1.hex,HEX,,fft_fft_ii_0,false
+simulation/submodules/fft_fft_ii_0_opt_twr4.hex,HEX,,fft_fft_ii_0,false
+simulation/submodules/fft_fft_ii_0_opt_twr5.hex,HEX,,fft_fft_ii_0,false
+simulation/submodules/fft_fft_ii_0_opt_twr1.hex,HEX,,fft_fft_ii_0,false
+simulation/submodules/fft_fft_ii_0_opt_twi2.hex,HEX,,fft_fft_ii_0,false
+simulation/submodules/fft_fft_ii_0_opt_twi3.hex,HEX,,fft_fft_ii_0,false
+simulation/submodules/fft_fft_ii_0_opt_twr2.hex,HEX,,fft_fft_ii_0,false
+simulation/submodules/fft_fft_ii_0_opt_twi4.hex,HEX,,fft_fft_ii_0,false
+simulation/submodules/fft_fft_ii_0_opt_twr3.hex,HEX,,fft_fft_ii_0,false
+simulation/submodules/fft_fft_ii_0.vo,VERILOG,,fft_fft_ii_0,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+fft.fft_ii_0,fft_fft_ii_0

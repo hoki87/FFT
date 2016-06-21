@@ -1,0 +1,19 @@
+[Project ID]
+	Signature=UE Proj: v.1
+[Project Information]
+	Use Relative Directory=1
+	Relative to Project File=1
+	Include Sub Directories=1
+	Project Tagfile=
+	Project Wordfile=
+	Project TpFile=
+	Filter=
+	Create Tagfile=0
+[Files]
+	0=.\src\
+	1=.\sim_altera\
+	2=.\sim_xilinx\
+[Group Filter]
+	.\src\=*.v;*.vhd;*.sdc;*.tcl;*.sv
+	.\sim_altera\=*.v;*.vhd;*.tcl;*do
+	.\sim_xilinx\=*.v;*.vhd;*.sdc;*.do;*.tcl;*.fdo
