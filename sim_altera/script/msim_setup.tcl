@@ -157,7 +157,7 @@ vmap       postproc                  ./libraries/postproc/
 ensure_lib                           ./libraries/LTE_FFT/                 
 vmap       LTE_FFT                   ./libraries/LTE_FFT/   
 ensure_lib                           ./libraries/fft_source_bfm/
-vmap       fft_source_bfm            ./libraries/fft_source_bfm/  
+vmap       fft_source_bfm            ./libraries/fft_source_bfm/
 
 # ----------------------------------------
 # Compile device library files

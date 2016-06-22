@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.7
-# Date: Mon Jun 20 14:22:56 2016
+# Date: Wed Jun 22 05:53:10 2016
 #
 ##############################################################
 #
@@ -57,7 +57,7 @@ CSET number_of_stages_using_block_ram_for_data_and_phase_factors=0
 CSET output_ordering=natural_order
 CSET ovflo=false
 CSET phase_factor_width=17
-CSET rounding_modes=truncation
+CSET rounding_modes=convergent_rounding
 CSET run_time_configurable_transform_length=true
 CSET scaling_options=scaled
 CSET sclr=true
@@ -69,4 +69,4 @@ CSET transform_length=2048
 MISC pkg_timestamp=2012-08-28T14:48:07Z
 # END Extra information
 GENERATE
-# CRC: 28f0d555
+# CRC: f303f78e

@@ -130,7 +130,7 @@ module fft_source_bfm(
          source_i <= 0;
          source_q <= 0;
          if(data_cnt==8)// || data_cnt==fft_len-1-9)
-            source_i <= 16383;
+            source_i <= 32767;
       end
    end
    

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="fft" kind="system" version="15.1" fabric="QSYS">
  <!-- Format version 15.1 185 (Future versions may contain additional information.) -->
- <!-- 2016.06.18.23:22:32 -->
+ <!-- 2016.06.22.10:21:20 -->
  <!-- A collection of modules and connections -->
  <parameter name="clockCrossingAdapter">
   <type>com.altera.sopcmodel.ensemble.EClockAdapter</type>
@@ -53,7 +53,7 @@
  </parameter>
  <parameter name="generationId">
   <type>int</type>
-  <value>1466263351</value>
+  <value>1466562079</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>true</visible>
@@ -209,7 +209,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="out_width">
    <type>int</type>
-   <value>28</value>
+   <value>16</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -217,7 +217,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="out_width_derived">
    <type>int</type>
-   <value>28</value>
+   <value>16</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -225,7 +225,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="twid_width">
    <type>int</type>
-   <value>16</value>
+   <value>18</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -233,7 +233,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="twid_width_derived">
    <type>int</type>
-   <value>16</value>
+   <value>18</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -594,13 +594,13 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>source_real</name>
     <direction>Output</direction>
-    <width>28</width>
+    <width>16</width>
     <role>source_real</role>
    </port>
    <port>
     <name>source_imag</name>
     <direction>Output</direction>
-    <width>28</width>
+    <width>16</width>
     <role>source_imag</role>
    </port>
    <port>
@@ -644,5 +644,5 @@ parameters are a RESULT of the module parameters. -->
   <version>15.1</version>
  </plugin>
  <reportVersion>15.1 185</reportVersion>
- <uniqueIdentifier>2CD05A8AF1B200000155641B3375</uniqueIdentifier>
+ <uniqueIdentifier>000C29F9E66A0000015575E96D15</uniqueIdentifier>
 </EnsembleReport>

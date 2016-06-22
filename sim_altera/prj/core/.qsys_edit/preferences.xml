@@ -7,11 +7,11 @@
    <irq preferredWidth="34" />
   </columns>
  </systemtable>
- <library expandedCategories="Project,Library" />
- <window width="1100" height="800" x="42" y="71" />
+ <library expandedCategories="Library,Project" />
+ <window width="437" height="623" x="321" y="187" />
  <generation
    greybox="0"
-   path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera"
+   path="X:/LTEFFT/"
    testbench_system="STANDARD"
    simulation="VERILOG"
    block_symbol_file="0" />

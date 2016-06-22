@@ -78,7 +78,7 @@ module preproc
    input                       din_rfd;       // ready for data input
    output                      dout_start;    // start output
    output                      dout_nfft_we;  // FFT/IFFT number write output
-   output [4:0]                dout_nfft;     // FFT/IFFT number output
+   output [`FFT_NFFT_NBIT-1:0] dout_nfft;     // FFT/IFFT number output
    output                      dout_inv_we;   // inverse write output
    output                      dout_inv;      // inverse output
    output                      dout_scale_we; // scale schedule write output
@@ -244,7 +244,7 @@ module preproc
    // XILINX FFT/IFFT IP Core Interface
    reg                      dout_start;    // start output
    reg                      dout_nfft_we;  // FFT/IFFT number write output
-   reg [4:0]                dout_nfft;     // FFT/IFFT number output
+   reg [`FFT_NFFT_NBIT-1:0] dout_nfft;     // FFT/IFFT number output
    reg                      dout_inv_we;   // inverse write output
    reg                      dout_inv;      // inverse output
    reg                      dout_scale_we; // scale schedule write output
@@ -255,7 +255,7 @@ module preproc
    always@* begin
       if(reset) begin
          dout_nfft_we  <= `LOW;
-         dout_nfft     <= 0;
+         dout_nfft     <= `FFT_NFFT_2048;
          dout_inv_we   <= `LOW;
          dout_inv      <= `LOW;
          dout_scale_we <= `LOW;
@@ -264,19 +264,19 @@ module preproc
       else begin
          if(fft_type) begin // IFFT: pass through
             dout_nfft_we <= din_h;
-            dout_nfft    <= 5'b01011;
+            dout_nfft    <= `FFT_NFFT_2048-num_pat;
             dout_inv_we  <= din_h;
             dout_inv     <=~fft_type;
             dout_scale_we<= din_h;
-            dout_scale   <= `FFT_SCH_NBIT'h0AA;//{{`FFT_SCH_NBIT-12{1'b0}},2'b10,2'b10,2'b10,2'b10,2'b10,2'b10};
+            dout_scale   <= `FFT_SCH_NBIT'hAB9; // shift log2(fft_num)+2 bits
          end
          else begin        // FFT: remove CP
             dout_nfft_we <= cache_switch^prev_cache_switch;
-            dout_nfft    <= 5'b01011;
+            dout_nfft    <= `FFT_NFFT_2048-num_pat;
             dout_inv_we  <= cache_switch^prev_cache_switch;
             dout_inv     <=~fft_type;
             dout_scale_we<= cache_switch^prev_cache_switch;
-            dout_scale   <= `FFT_SCH_NBIT'h00A;//{{`FFT_SCH_NBIT-12{1'b0}},2'b10,2'b10,2'b10,2'b10,2'b10,2'b10};
+            dout_scale   <= `FFT_SCH_NBIT'hAB9; // shift log2(fft_num)+2 bits
          end
       end
    end

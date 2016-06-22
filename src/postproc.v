@@ -241,8 +241,8 @@ module postproc
             dout_h  <= din_v&~p_din_v;
             dout_s  <= din_v&~p_din_v&din_fst_cp;
             dout_v  <= p_din_v;
-            dout_i  <= p_din_i;
-            dout_q  <= p_din_q;
+            dout_i  <= p_din_v ? p_din_i : 0;
+            dout_q  <= p_din_v ? p_din_q : 0;
          end
          else begin // IFFT: insert CP
             dout_h <= buf_rd_cp_en&&(buf_rd_cnt==1)&&(cache_raddr==cache_fft_num-cache_cp_num);

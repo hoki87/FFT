@@ -18,7 +18,7 @@ module LTE_FFT
     #
     (
     parameter BIT_WIDTH             = 16,
-    parameter CLK_FS_RATIO          = 4     //Range 5(153.6M/30.72M) or 6(184.32M/30.72M)
+    parameter CLK_FS_RATIO          = 5     //Range 5(153.6M/30.72M) or 6(184.32M/30.72M)
     )
     (
     input                   Reset,
@@ -111,7 +111,7 @@ module LTE_FFT
    wire                      proc_rfd;
    wire                      preproc_start;
    wire                      preproc_nfft_we;
-   wire [4:0]                preproc_nfft;
+   wire [`FFT_NFFT_NBIT-1:0] preproc_nfft;
    wire                      preproc_inv_we;
    wire                      preproc_inv;
    wire                      preproc_scale_we;

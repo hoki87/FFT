@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2016.06.18.23:22:32"
- outputDirectory="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/">
+ date="2016.06.22.10:21:20"
+ outputDirectory="X:/LTEFFT/LTE_FFT/src/core/altera/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -83,20 +83,20 @@
    <port name="source_error" direction="output" role="source_error" width="2" />
    <port name="source_sop" direction="output" role="source_sop" width="1" />
    <port name="source_eop" direction="output" role="source_eop" width="1" />
-   <port name="source_real" direction="output" role="source_real" width="28" />
-   <port name="source_imag" direction="output" role="source_imag" width="28" />
+   <port name="source_real" direction="output" role="source_real" width="16" />
+   <port name="source_imag" direction="output" role="source_imag" width="16" />
    <port name="fftpts_out" direction="output" role="fftpts_out" width="12" />
   </interface>
  </perimeter>
  <entity
    path=""
-   parameterizationKey="fft:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=5CEBA4F17A7,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=7,AUTO_GENERATION_ID=1466263351,AUTO_UNIQUE_ID=(altera_fft_ii:15.1:CALC_LATENCY=2048,THROUGHPUT_LATENCY=4096,data_flow=Variable Streaming,data_rep=Fixed Point,design_env=NATIVE,direction=Bi-directional,dsp_resource_opt=false,engine_arch=Quad Output,hard_fp=false,in_order=Natural,in_width=16,in_width_derived=16,length=2048,num_engines=1,num_engines_derived=1,out_order=Natural,out_width=28,out_width_derived=28,selected_device_family=Cyclone V,twid_width=16,twid_width_derived=16)"
+   parameterizationKey="fft:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=5CEBA4F17A7,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=7,AUTO_GENERATION_ID=1466562079,AUTO_UNIQUE_ID=(altera_fft_ii:15.1:CALC_LATENCY=2048,THROUGHPUT_LATENCY=4096,data_flow=Variable Streaming,data_rep=Fixed Point,design_env=NATIVE,direction=Bi-directional,dsp_resource_opt=false,engine_arch=Quad Output,hard_fp=false,in_order=Natural,in_width=16,in_width_derived=16,length=2048,num_engines=1,num_engines_derived=1,out_order=Natural,out_width=16,out_width_derived=16,selected_device_family=Cyclone V,twid_width=18,twid_width_derived=18)"
    instancePathKey="fft"
    kind="fft"
    version="1.0"
    name="fft">
   <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
-  <parameter name="AUTO_GENERATION_ID" value="1466263351" />
+  <parameter name="AUTO_GENERATION_ID" value="1466562079" />
   <parameter name="AUTO_DEVICE" value="5CEBA4F17A7" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
   <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />
@@ -105,229 +105,229 @@
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
   <generatedFiles>
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/fft.v"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/fft.v"
        type="VERILOG" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twi5.hex"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twi5.hex"
        type="HEX"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twi1.hex"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twi1.hex"
        type="HEX"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twr4.hex"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twr4.hex"
        type="HEX"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twr5.hex"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twr5.hex"
        type="HEX"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twr1.hex"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twr1.hex"
        type="HEX"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twi2.hex"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twi2.hex"
        type="HEX"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twi3.hex"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twi3.hex"
        type="HEX"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twr2.hex"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twr2.hex"
        type="HEX"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twi4.hex"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twi4.hex"
        type="HEX"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twr3.hex"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twr3.hex"
        type="HEX"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_text_pkg.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_text_pkg.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_math_pkg.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_math_pkg.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_lib_pkg.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_lib_pkg.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_avalon_streaming_block_sink.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_avalon_streaming_block_sink.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_avalon_streaming_block_source.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_avalon_streaming_block_source.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_roundsat.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_roundsat.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_fpcompiler_alufp.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_fpcompiler_alufp.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_fpcompiler_aslf.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_fpcompiler_aslf.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_fpcompiler_asrf.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_fpcompiler_asrf.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_fpcompiler_castftox.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_fpcompiler_castftox.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_fpcompiler_castxtof.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_fpcompiler_castxtof.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_fpcompiler_clzf.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_fpcompiler_clzf.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_fpcompiler_mulfp.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_fpcompiler_mulfp.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/apn_fft_mult_can.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/apn_fft_mult_can.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/apn_fft_mult_cpx_1825.v"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/apn_fft_mult_cpx_1825.v"
        type="VERILOG_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/apn_fft_mult_cpx.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/apn_fft_mult_cpx.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_top.ocp"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_top.ocp"
        type="OTHER"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/altera_fft_dual_port_ram.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/altera_fft_dual_port_ram.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/altera_fft_dual_port_rom.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/altera_fft_dual_port_rom.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/altera_fft_mult_add.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/altera_fft_mult_add.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/altera_fft_single_port_rom.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/altera_fft_single_port_rom.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_fft_pkg.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_fft_pkg.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_lib_pkg.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_lib_pkg.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_bit_reverse_addr_control.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_bit_reverse_addr_control.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_bit_reverse_core.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_bit_reverse_core.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_bit_reverse_reverse_carry_adder.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_bit_reverse_reverse_carry_adder.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_adder_fp.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_adder_fp.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_addsub.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_addsub.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_bfi.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_bfi.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_bfii.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_bfii.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_bf_control.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_bf_control.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_cma.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_cma.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_cma_adder_fp.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_cma_adder_fp.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_cma_bfi_fp.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_cma_bfi_fp.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_core.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_core.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_counter.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_counter.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_delay.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_delay.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_enable_control.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_enable_control.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_stage.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_stage.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_stg_out_pipe.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_stg_out_pipe.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_stg_pipe.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_stg_pipe.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_top.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_top.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_twrom.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_twrom.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0.sv"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0.sv"
        type="SYSTEM_VERILOG"
        attributes="" />
   </childGeneratedFiles>
   <sourceFiles>
-   <file path="E:/OneDrive/Works/LTEFFT/LTE_FFT/sim_altera/prj/core/fft.qsys" />
+   <file path="X:/LTEFFT/LTE_FFT/sim_altera/prj/core/fft.qsys" />
   </sourceFiles>
   <childSourceFiles>
    <file
@@ -357,7 +357,7 @@
  </entity>
  <entity
    path="submodules/"
-   parameterizationKey="altera_fft_ii:15.1:CALC_LATENCY=2048,THROUGHPUT_LATENCY=4096,data_flow=Variable Streaming,data_rep=Fixed Point,design_env=NATIVE,direction=Bi-directional,dsp_resource_opt=false,engine_arch=Quad Output,hard_fp=false,in_order=Natural,in_width=16,in_width_derived=16,length=2048,num_engines=1,num_engines_derived=1,out_order=Natural,out_width=28,out_width_derived=28,selected_device_family=Cyclone V,twid_width=16,twid_width_derived=16"
+   parameterizationKey="altera_fft_ii:15.1:CALC_LATENCY=2048,THROUGHPUT_LATENCY=4096,data_flow=Variable Streaming,data_rep=Fixed Point,design_env=NATIVE,direction=Bi-directional,dsp_resource_opt=false,engine_arch=Quad Output,hard_fp=false,in_order=Natural,in_width=16,in_width_derived=16,length=2048,num_engines=1,num_engines_derived=1,out_order=Natural,out_width=16,out_width_derived=16,selected_device_family=Cyclone V,twid_width=18,twid_width_derived=18"
    instancePathKey="fft:.:fft_ii_0"
    kind="altera_fft_ii"
    version="15.1"
@@ -366,7 +366,7 @@
   <parameter name="in_width_derived" value="16" />
   <parameter name="in_order" value="Natural" />
   <parameter name="num_engines_derived" value="1" />
-  <parameter name="twid_width_derived" value="16" />
+  <parameter name="twid_width_derived" value="18" />
   <parameter name="length" value="2048" />
   <parameter name="out_order" value="Natural" />
   <parameter name="selected_device_family" value="Cyclone V" />
@@ -377,227 +377,227 @@
   <parameter name="in_width" value="16" />
   <parameter name="engine_arch" value="Quad Output" />
   <parameter name="data_flow" value="Variable Streaming" />
-  <parameter name="out_width" value="28" />
+  <parameter name="out_width" value="16" />
   <parameter name="num_engines" value="1" />
-  <parameter name="out_width_derived" value="28" />
+  <parameter name="out_width_derived" value="16" />
   <parameter name="hard_fp" value="false" />
-  <parameter name="twid_width" value="16" />
+  <parameter name="twid_width" value="18" />
   <parameter name="direction" value="Bi-directional" />
   <generatedFiles>
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twi5.hex"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twi5.hex"
        type="HEX"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twi1.hex"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twi1.hex"
        type="HEX"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twr4.hex"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twr4.hex"
        type="HEX"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twr5.hex"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twr5.hex"
        type="HEX"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twr1.hex"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twr1.hex"
        type="HEX"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twi2.hex"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twi2.hex"
        type="HEX"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twi3.hex"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twi3.hex"
        type="HEX"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twr2.hex"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twr2.hex"
        type="HEX"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twi4.hex"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twi4.hex"
        type="HEX"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twr3.hex"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0_opt_twr3.hex"
        type="HEX"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_text_pkg.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_text_pkg.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_math_pkg.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_math_pkg.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_lib_pkg.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_lib_pkg.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_avalon_streaming_block_sink.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_avalon_streaming_block_sink.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_avalon_streaming_block_source.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_avalon_streaming_block_source.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_roundsat.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_roundsat.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_fpcompiler_alufp.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_fpcompiler_alufp.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_fpcompiler_aslf.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_fpcompiler_aslf.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_fpcompiler_asrf.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_fpcompiler_asrf.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_fpcompiler_castftox.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_fpcompiler_castftox.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_fpcompiler_castxtof.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_fpcompiler_castxtof.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_fpcompiler_clzf.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_fpcompiler_clzf.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_fpcompiler_mulfp.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_fpcompiler_mulfp.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/apn_fft_mult_can.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/apn_fft_mult_can.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/apn_fft_mult_cpx_1825.v"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/apn_fft_mult_cpx_1825.v"
        type="VERILOG_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/apn_fft_mult_cpx.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/apn_fft_mult_cpx.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_top.ocp"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_top.ocp"
        type="OTHER"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/altera_fft_dual_port_ram.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/altera_fft_dual_port_ram.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/altera_fft_dual_port_rom.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/altera_fft_dual_port_rom.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/altera_fft_mult_add.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/altera_fft_mult_add.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/altera_fft_single_port_rom.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/altera_fft_single_port_rom.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_fft_pkg.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_fft_pkg.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_lib_pkg.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_lib_pkg.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_bit_reverse_addr_control.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_bit_reverse_addr_control.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_bit_reverse_core.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_bit_reverse_core.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_bit_reverse_reverse_carry_adder.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_bit_reverse_reverse_carry_adder.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_adder_fp.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_adder_fp.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_addsub.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_addsub.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_bfi.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_bfi.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_bfii.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_bfii.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_bf_control.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_bf_control.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_cma.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_cma.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_cma_adder_fp.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_cma_adder_fp.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_cma_bfi_fp.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_cma_bfi_fp.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_core.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_core.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_counter.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_counter.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_delay.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_delay.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_enable_control.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_enable_control.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_stage.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_stage.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_stg_out_pipe.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_stg_out_pipe.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_stg_pipe.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_stg_pipe.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_top.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_top.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_twrom.vhd"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/auk_dspip_r22sdf_twrom.vhd"
        type="VHDL_ENCRYPT"
        attributes="" />
    <file
-       path="E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0.sv"
+       path="X:/LTEFFT/LTE_FFT/src/core/altera/synthesis/submodules/fft_fft_ii_0.sv"
        type="SYSTEM_VERILOG"
        attributes="" />
   </generatedFiles>

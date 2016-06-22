@@ -1,35 +1,35 @@
-# system info fft_tb on 2016.06.17.10:44:48
+# system info fft_tb on 2016.06.22.16:16:51
 system_info:
 name,value
 DEVICE,5CEBA4F17A7
 DEVICE_FAMILY,Cyclone V
-GENERATION_ID,1466131445
+GENERATION_ID,1466583365
 #
 #
-# Files generated for fft_tb on 2016.06.17.10:44:48
+# Files generated for fft_tb on 2016.06.22.16:16:51
 files:
 filepath,kind,attributes,module,is_top
-E:/OneDrive/Works/LTEFFT/LTE_FFT/sim_altera/testbench/fft_tb/simulation/fft_tb.v,VERILOG,,fft_tb,true
-E:/OneDrive/Works/LTEFFT/LTE_FFT/sim_altera/testbench/fft_tb/simulation/submodules/fft.v,VERILOG,,fft,false
-E:/OneDrive/Works/LTEFFT/LTE_FFT/sim_altera/testbench/fft_tb/simulation/submodules/verbosity_pkg.sv,SYSTEM_VERILOG, COMMON_SYSTEMVERILOG_PACKAGE=avalon_vip_verbosity_pkg,altera_avalon_clock_source,false
-E:/OneDrive/Works/LTEFFT/LTE_FFT/sim_altera/testbench/fft_tb/simulation/submodules/altera_avalon_clock_source.sv,SYSTEM_VERILOG,,altera_avalon_clock_source,false
-E:/OneDrive/Works/LTEFFT/LTE_FFT/sim_altera/testbench/fft_tb/simulation/submodules/verbosity_pkg.sv,SYSTEM_VERILOG, COMMON_SYSTEMVERILOG_PACKAGE=avalon_vip_verbosity_pkg,altera_avalon_reset_source,false
-E:/OneDrive/Works/LTEFFT/LTE_FFT/sim_altera/testbench/fft_tb/simulation/submodules/altera_avalon_reset_source.sv,SYSTEM_VERILOG,,altera_avalon_reset_source,false
-E:/OneDrive/Works/LTEFFT/LTE_FFT/sim_altera/testbench/fft_tb/simulation/submodules/verbosity_pkg.sv,SYSTEM_VERILOG, COMMON_SYSTEMVERILOG_PACKAGE=avalon_vip_verbosity_pkg,altera_conduit_bfm,false
-E:/OneDrive/Works/LTEFFT/LTE_FFT/sim_altera/testbench/fft_tb/simulation/submodules/altera_conduit_bfm.sv,SYSTEM_VERILOG,,altera_conduit_bfm,false
-E:/OneDrive/Works/LTEFFT/LTE_FFT/sim_altera/testbench/fft_tb/simulation/submodules/verbosity_pkg.sv,SYSTEM_VERILOG, COMMON_SYSTEMVERILOG_PACKAGE=avalon_vip_verbosity_pkg,altera_conduit_bfm_0002,false
-E:/OneDrive/Works/LTEFFT/LTE_FFT/sim_altera/testbench/fft_tb/simulation/submodules/altera_conduit_bfm_0002.sv,SYSTEM_VERILOG,,altera_conduit_bfm_0002,false
-E:/OneDrive/Works/LTEFFT/LTE_FFT/sim_altera/testbench/fft_tb/simulation/submodules/fft_fft_ii_0_opt_twi5.hex,HEX,,fft_fft_ii_0,false
-E:/OneDrive/Works/LTEFFT/LTE_FFT/sim_altera/testbench/fft_tb/simulation/submodules/fft_fft_ii_0_opt_twi1.hex,HEX,,fft_fft_ii_0,false
-E:/OneDrive/Works/LTEFFT/LTE_FFT/sim_altera/testbench/fft_tb/simulation/submodules/fft_fft_ii_0_opt_twr4.hex,HEX,,fft_fft_ii_0,false
-E:/OneDrive/Works/LTEFFT/LTE_FFT/sim_altera/testbench/fft_tb/simulation/submodules/fft_fft_ii_0_opt_twr5.hex,HEX,,fft_fft_ii_0,false
-E:/OneDrive/Works/LTEFFT/LTE_FFT/sim_altera/testbench/fft_tb/simulation/submodules/fft_fft_ii_0_opt_twr1.hex,HEX,,fft_fft_ii_0,false
-E:/OneDrive/Works/LTEFFT/LTE_FFT/sim_altera/testbench/fft_tb/simulation/submodules/fft_fft_ii_0_opt_twi2.hex,HEX,,fft_fft_ii_0,false
-E:/OneDrive/Works/LTEFFT/LTE_FFT/sim_altera/testbench/fft_tb/simulation/submodules/fft_fft_ii_0_opt_twi3.hex,HEX,,fft_fft_ii_0,false
-E:/OneDrive/Works/LTEFFT/LTE_FFT/sim_altera/testbench/fft_tb/simulation/submodules/fft_fft_ii_0_opt_twr2.hex,HEX,,fft_fft_ii_0,false
-E:/OneDrive/Works/LTEFFT/LTE_FFT/sim_altera/testbench/fft_tb/simulation/submodules/fft_fft_ii_0_opt_twi4.hex,HEX,,fft_fft_ii_0,false
-E:/OneDrive/Works/LTEFFT/LTE_FFT/sim_altera/testbench/fft_tb/simulation/submodules/fft_fft_ii_0_opt_twr3.hex,HEX,,fft_fft_ii_0,false
-E:/OneDrive/Works/LTEFFT/LTE_FFT/sim_altera/testbench/fft_tb/simulation/submodules/fft_fft_ii_0.vo,VERILOG,,fft_fft_ii_0,false
+X:/LTEFFT/testbench/fft_tb/simulation/fft_tb.v,VERILOG,,fft_tb,true
+X:/LTEFFT/testbench/fft_tb/simulation/submodules/fft.v,VERILOG,,fft,false
+X:/LTEFFT/testbench/fft_tb/simulation/submodules/verbosity_pkg.sv,SYSTEM_VERILOG, COMMON_SYSTEMVERILOG_PACKAGE=avalon_vip_verbosity_pkg,altera_avalon_clock_source,false
+X:/LTEFFT/testbench/fft_tb/simulation/submodules/altera_avalon_clock_source.sv,SYSTEM_VERILOG,,altera_avalon_clock_source,false
+X:/LTEFFT/testbench/fft_tb/simulation/submodules/verbosity_pkg.sv,SYSTEM_VERILOG, COMMON_SYSTEMVERILOG_PACKAGE=avalon_vip_verbosity_pkg,altera_avalon_reset_source,false
+X:/LTEFFT/testbench/fft_tb/simulation/submodules/altera_avalon_reset_source.sv,SYSTEM_VERILOG,,altera_avalon_reset_source,false
+X:/LTEFFT/testbench/fft_tb/simulation/submodules/verbosity_pkg.sv,SYSTEM_VERILOG, COMMON_SYSTEMVERILOG_PACKAGE=avalon_vip_verbosity_pkg,altera_conduit_bfm,false
+X:/LTEFFT/testbench/fft_tb/simulation/submodules/altera_conduit_bfm.sv,SYSTEM_VERILOG,,altera_conduit_bfm,false
+X:/LTEFFT/testbench/fft_tb/simulation/submodules/verbosity_pkg.sv,SYSTEM_VERILOG, COMMON_SYSTEMVERILOG_PACKAGE=avalon_vip_verbosity_pkg,altera_conduit_bfm_0002,false
+X:/LTEFFT/testbench/fft_tb/simulation/submodules/altera_conduit_bfm_0002.sv,SYSTEM_VERILOG,,altera_conduit_bfm_0002,false
+X:/LTEFFT/testbench/fft_tb/simulation/submodules/fft_fft_ii_0_opt_twi5.hex,HEX,,fft_fft_ii_0,false
+X:/LTEFFT/testbench/fft_tb/simulation/submodules/fft_fft_ii_0_opt_twi1.hex,HEX,,fft_fft_ii_0,false
+X:/LTEFFT/testbench/fft_tb/simulation/submodules/fft_fft_ii_0_opt_twr4.hex,HEX,,fft_fft_ii_0,false
+X:/LTEFFT/testbench/fft_tb/simulation/submodules/fft_fft_ii_0_opt_twr5.hex,HEX,,fft_fft_ii_0,false
+X:/LTEFFT/testbench/fft_tb/simulation/submodules/fft_fft_ii_0_opt_twr1.hex,HEX,,fft_fft_ii_0,false
+X:/LTEFFT/testbench/fft_tb/simulation/submodules/fft_fft_ii_0_opt_twi2.hex,HEX,,fft_fft_ii_0,false
+X:/LTEFFT/testbench/fft_tb/simulation/submodules/fft_fft_ii_0_opt_twi3.hex,HEX,,fft_fft_ii_0,false
+X:/LTEFFT/testbench/fft_tb/simulation/submodules/fft_fft_ii_0_opt_twr2.hex,HEX,,fft_fft_ii_0,false
+X:/LTEFFT/testbench/fft_tb/simulation/submodules/fft_fft_ii_0_opt_twi4.hex,HEX,,fft_fft_ii_0,false
+X:/LTEFFT/testbench/fft_tb/simulation/submodules/fft_fft_ii_0_opt_twr3.hex,HEX,,fft_fft_ii_0,false
+X:/LTEFFT/testbench/fft_tb/simulation/submodules/fft_fft_ii_0.vo,VERILOG,,fft_fft_ii_0,false
 #
 # Map from instance-path to kind of module
 instances:

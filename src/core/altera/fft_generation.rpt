@@ -1,5 +1,5 @@
 Info: Starting: Create simulation model
-Info: qsys-generate E:\OneDrive\Works\LTEFFT\LTE_FFT\sim_altera\prj\core\fft.qsys --simulation=VERILOG --output-directory=E:\OneDrive\Works\LTEFFT\LTE_FFT\src\core\altera\simulation --family="Cyclone V" --part=5CEBA4F17A7
+Info: qsys-generate X:\LTEFFT\LTE_FFT\sim_altera\prj\core\fft.qsys --simulation=VERILOG --output-directory=X:\LTEFFT\LTE_FFT\src\core\altera\simulation --family="Cyclone V" --part=5CEBA4F17A7
 Progress: Loading core/fft.qsys
 Progress: Reading input file
 Progress: Adding fft_ii_0 [altera_fft_ii 15.1]
@@ -9,33 +9,33 @@ Progress: Parameterizing connections
 Progress: Validating
 Progress: Done reading input file
 Info: fft: Generating fft "fft" for SIM_VERILOG
-Info: fft_ii_0: Created simgen file at: C:/Users/HUXIAO~1/AppData/Local/Temp/alt6970_1386319797985232168.dir/0002_fft_ii_0_gen/fft_fft_ii_0.vo
+Info: fft_ii_0: Created simgen file at: C:/Users/huxia/AppData/Local/Temp/alt6974_5587131837441869436.dir/0001_fft_ii_0_gen/fft_fft_ii_0.vo
 Info: fft_ii_0: "fft" instantiated altera_fft_ii "fft_ii_0"
 Info: fft: Done "fft" with 2 modules, 12 files
 Info: qsys-generate succeeded.
 Info: Finished: Create simulation model
 Info: Starting: Create Modelsim Project.
-Info: sim-script-gen --spd=E:\OneDrive\Works\LTEFFT\LTE_FFT\src\core\altera\fft.spd --output-directory=E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/simulation/ --use-relative-paths=true
-Info: Doing: ip-make-simscript --spd=E:\OneDrive\Works\LTEFFT\LTE_FFT\src\core\altera\fft.spd --output-directory=E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/simulation/ --use-relative-paths=true
-Info: Generating the following file(s) for MODELSIM simulator in E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/simulation/ directory:
+Info: sim-script-gen --spd=X:\LTEFFT\LTE_FFT\src\core\altera\fft.spd --output-directory=X:/LTEFFT/LTE_FFT/src/core/altera/simulation/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=X:\LTEFFT\LTE_FFT\src\core\altera\fft.spd --output-directory=X:/LTEFFT/LTE_FFT/src/core/altera/simulation/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in X:/LTEFFT/LTE_FFT/src/core/altera/simulation/ directory:
 Info: 	mentor/msim_setup.tcl
-Info: Generating the following file(s) for VCS simulator in E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/simulation/ directory:
+Info: Generating the following file(s) for VCS simulator in X:/LTEFFT/LTE_FFT/src/core/altera/simulation/ directory:
 Info: 	synopsys/vcs/vcs_setup.sh
-Info: Generating the following file(s) for VCSMX simulator in E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/simulation/ directory:
+Info: Generating the following file(s) for VCSMX simulator in X:/LTEFFT/LTE_FFT/src/core/altera/simulation/ directory:
 Info: 	synopsys/vcsmx/synopsys_sim.setup
 Info: 	synopsys/vcsmx/vcsmx_setup.sh
-Info: Generating the following file(s) for NCSIM simulator in E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/simulation/ directory:
+Info: Generating the following file(s) for NCSIM simulator in X:/LTEFFT/LTE_FFT/src/core/altera/simulation/ directory:
 Info: 	cadence/cds.lib
 Info: 	cadence/hdl.var
 Info: 	cadence/ncsim_setup.sh
 Info: 	1 .cds.lib files in cadence/cds_libs/ directory
-Info: Generating the following file(s) for RIVIERA simulator in E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/simulation/ directory:
+Info: Generating the following file(s) for RIVIERA simulator in X:/LTEFFT/LTE_FFT/src/core/altera/simulation/ directory:
 Info: 	aldec/rivierapro_setup.tcl
-Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under E:/OneDrive/Works/LTEFFT/LTE_FFT/src/core/altera/simulation/.
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under X:/LTEFFT/LTE_FFT/src/core/altera/simulation/.
 Info: Finished: Create Modelsim Project.
 Info: 
 Info: Starting: Create HDL design files for synthesis
-Info: qsys-generate E:\OneDrive\Works\LTEFFT\LTE_FFT\sim_altera\prj\core\fft.qsys --synthesis=VERILOG --output-directory=E:\OneDrive\Works\LTEFFT\LTE_FFT\src\core\altera\synthesis --family="Cyclone V" --part=5CEBA4F17A7
+Info: qsys-generate X:\LTEFFT\LTE_FFT\sim_altera\prj\core\fft.qsys --synthesis=VERILOG --output-directory=X:\LTEFFT\LTE_FFT\src\core\altera\synthesis --family="Cyclone V" --part=5CEBA4F17A7
 Progress: Loading core/fft.qsys
 Progress: Reading input file
 Progress: Adding fft_ii_0 [altera_fft_ii 15.1]

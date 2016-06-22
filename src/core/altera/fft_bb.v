@@ -36,7 +36,7 @@ module fft (
 	output	[1:0]	source_error;
 	output		source_sop;
 	output		source_eop;
-	output	[27:0]	source_real;
-	output	[27:0]	source_imag;
+	output	[15:0]	source_real;
+	output	[15:0]	source_imag;
 	output	[11:0]	fftpts_out;
 endmodule

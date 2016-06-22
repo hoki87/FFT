@@ -83,9 +83,9 @@
   <parameter name="length" value="2048" />
   <parameter name="num_engines" value="1" />
   <parameter name="out_order" value="Natural" />
-  <parameter name="out_width" value="28" />
+  <parameter name="out_width" value="16" />
   <parameter name="selected_device_family" value="Cyclone V" />
-  <parameter name="twid_width" value="16" />
+  <parameter name="twid_width" value="18" />
  </module>
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />

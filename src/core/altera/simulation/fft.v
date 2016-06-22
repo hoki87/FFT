@@ -20,8 +20,8 @@ module fft (
 		output wire [1:0]  source_error, //       .source_error
 		output wire        source_sop,   //       .source_sop
 		output wire        source_eop,   //       .source_eop
-		output wire [27:0] source_real,  //       .source_real
-		output wire [27:0] source_imag,  //       .source_imag
+		output wire [15:0] source_real,  //       .source_real
+		output wire [15:0] source_imag,  //       .source_imag
 		output wire [11:0] fftpts_out    //       .fftpts_out
 	);
 

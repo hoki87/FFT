@@ -68,7 +68,7 @@ module fft_tb (
       
    ////////////////// CLOCK & RESET Source
 	clock_source #(
-		.CLOCK_RATE (100000000), // 153.6MHz
+		.CLOCK_RATE (100000000), // 100MHz
 		.CLOCK_UNIT (1)
 	) fft_inst_clk_bfm (
 		.clk (fft_clk)
