@@ -10,9 +10,9 @@ module fft_tb (
 	wire           fft_clk;   // fft_inst_clk_bfm:clk -> [fft_inst:clk, fft_inst_rst_bfm:clk]
 	wire           fft_reset; // fft_inst_rst_bfm:reset -> fft_inst:reset_n
                   
-   wire  [1:0]    FFT_num; 
+   wire  [2:0]    FFT_num; 
+   wire  [6:0]    FS_ratio;
    wire           CP_type; 
-   wire           FFT_type;
    wire  [15:0]   Din_i;
    wire  [15:0]   Din_q;
    wire           Din_h;   
@@ -26,12 +26,12 @@ module fft_tb (
    
    
 	
-   LTE_FFT #(.BIT_WIDTH   (16),
-             .CLK_FS_RATIO(5 ))
+   LTE_FFT #(.BIT_WIDTH   (16))
    IFFT(
       .Reset   (fft_reset),
       .Clk     (fft_clk  ),
       .FFT_num (FFT_num  ),
+      .FS_ratio(FS_ratio ),
       .CP_type (CP_type  ),
       .FFT_type(1'b1     ),
       .Din_i   (Din_i    ),
@@ -46,12 +46,12 @@ module fft_tb (
       .Dout_v  (Dout_v   ) 
    );	
 
-   LTE_FFT #(.BIT_WIDTH   (16),
-             .CLK_FS_RATIO(5 ))
+   LTE_FFT #(.BIT_WIDTH   (16))
    FFT(
       .Reset   (fft_reset),
       .Clk     (fft_clk  ),
       .FFT_num (FFT_num  ),
+      .FS_ratio(FS_ratio ),
       .CP_type (CP_type  ),
       .FFT_type(1'b0     ),
       .Din_i   (Dout_i   ),
@@ -82,14 +82,13 @@ module fft_tb (
 		.clk   (fft_clk)   
 	);
 
-   fft_source_bfm #(.DATA_NBIT   (16),
-                    .CLK_FS_RATIO(5 ))
+   fft_source_bfm #(.DATA_NBIT   (16))
    ifft_source(
       .clk     (fft_clk  ),
       .reset   (fft_reset),
       .fft_num (FFT_num  ),
+      .fs_ratio(FS_ratio ),
       .cp_type (CP_type  ), 
-      .fft_type(FFT_type ),
       .source_i(Din_i    ),   
       .source_q(Din_q    ),   
       .source_h(Din_h    ),   

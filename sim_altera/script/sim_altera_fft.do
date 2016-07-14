@@ -9,4 +9,4 @@ ld_debug
 do altera_wave.do              
 
 # runing simulation
-run 400us
+run 4.5ms

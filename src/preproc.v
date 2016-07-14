@@ -24,7 +24,7 @@ module preproc
    reset        ,
    fft_type     ,
    cp_type      ,
-   num_pat      ,
+   fft_num      ,
    din_i        ,
    din_q        ,
    din_h        ,
@@ -32,7 +32,6 @@ module preproc
    din_v        ,
 `ifdef ALTERA   
    dout_sop     ,
-   dout_fft_num ,
    dout_valid   ,
    dout_real    ,
    dout_imag    ,
@@ -54,14 +53,13 @@ module preproc
 
    ///////////////// PARAMETER ////////////////
    parameter DATA_NBIT    = 15;
-   parameter CLK_FS_RATIO = 5;
    
    ////////////////// PORT ////////////////////
    input                       clk;           // clock input                       
    input                       reset;         // reset input
    input                       fft_type;      // 0: FFT, 1 - IFFT
    input                       cp_type;       // 0 - normal, 1 - extended 
-   input  [1:0]                num_pat;       // 0 - 2048,1 - 1536,2 - 1024,3 - 512
+   input  [2:0]                fft_num;       // 0 - 2048,1 - 1024,3 - 512,4 - 256, 5 - 128
    input  [DATA_NBIT-1:0]      din_i;         // I path data input                 
    input  [DATA_NBIT-1:0]      din_q;         // Q path data input                 
    input                       din_h;         // first sample data valid input
@@ -69,7 +67,6 @@ module preproc
    input                       din_v;         // sample data valid input      
 `ifdef ALTERA                                 
    output                      dout_sop;      // start of packet
-   output [`FFT_NUM_NBIT-1:0]  dout_fft_num;  // fft number
    output                      dout_valid;    // data valid output
    output [DATA_NBIT-1:0]      dout_real;     // I path data output     
    output [DATA_NBIT-1:0]      dout_imag;     // Q path data output    
@@ -86,31 +83,31 @@ module preproc
    output [DATA_NBIT-1:0]      dout_xn_re;    // real data output
    output [DATA_NBIT-1:0]      dout_xn_im;    // imag data output
 `endif
-   output                      dout_fst_cp;  // the flag of first cp
+   output                      dout_fst_cp;   // the flag of first cp
    
    ////////////////// ARCH ////////////////////
+   reg                         cache_fst_cp  ; // latch fst_cp   for following modules
    reg  [`FFT_NUM_NBIT-1:0]    cache_fft_num;
    reg  [`FFT_NUM_NBIT-1:0]    cache_cp_num;
    reg                         cache_switch;  // ping pang ram switch                     
    reg  [`FFT_NUM_NBIT-1:0]    cache_waddr;
-   reg                         cache_fst_cp;
    reg                         buf_wr_en;
    reg                         buf_wr;
    wire [`BUF_ADDR_NBIT:0]     buf_waddr;
    wire [DATA_NBIT*2-1:0]      buf_wdata; // {data_i,data_q}
-   
+  
    assign buf_waddr = {cache_switch,cache_waddr[`BUF_ADDR_NBIT-1:0]};
    assign buf_wdata = {din_i,din_q};
    
    always@(posedge clk) begin
       if(reset) begin
+         cache_fst_cp  <= `LOW;
          cache_fft_num <= `FFT_NUM_NBIT'd`FFT_MAX_NUM;
          cache_cp_num  <= `FFT_NUM_NBIT'd`CP_NOR_NUM;
          cache_switch  <= `LOW;
          cache_waddr   <= 0;
          buf_wr_en     <= `LOW;
          buf_wr        <= `LOW;
-         cache_fst_cp  <= `LOW;
       end
       else begin
          buf_wr <= `LOW;
@@ -133,21 +130,21 @@ module preproc
                end
             end
          end
-
+         
          // latch FFT number and CP number
          if(din_h) begin
-            cache_fft_num <= `FFT_NUM_NBIT'd`FFT_MAX_NUM - {1'b0,num_pat,9'd0};
+            cache_fft_num <= `FFT_NUM_NBIT'd`FFT_MAX_NUM>>fft_num;
             if(cp_type)
-               cache_cp_num  <= `FFT_NUM_NBIT'd`CP_EXT_NUM;
+               cache_cp_num  <= `FFT_NUM_NBIT'd`CP_EXT_NUM>>fft_num;
             else begin
                if(din_s)
-                  cache_cp_num <= `FFT_NUM_NBIT'd`CP_NOR_FST_NUM;
+                  cache_cp_num <= `FFT_NUM_NBIT'd`CP_NOR_FST_NUM>>fft_num;
                else
-                  cache_cp_num <= `FFT_NUM_NBIT'd`CP_NOR_NUM;
+                  cache_cp_num <= `FFT_NUM_NBIT'd`CP_NOR_NUM>>fft_num;
             end
-            cache_waddr  <= 0;
-            buf_wr_en    <= fft_type;
-            cache_fst_cp <= din_s;
+            cache_fst_cp   <= din_s;
+            cache_waddr    <= 0;
+            buf_wr_en      <= fft_type;
          end
       end
    end
@@ -169,17 +166,15 @@ module preproc
    end
    
    ////////////////// DOUT
-   reg                      dout_fst_cp;
+   reg                      dout_fst_cp  ;
    reg  [`FFT_NUM_NBIT-1:0] cache_raddr={`FFT_NUM_NBIT{1'b1}};
-   reg                      buf_rd;
    reg                      prev_cache_switch;
    
-   assign buf_raddr    = {~cache_switch,cache_raddr[`BUF_ADDR_NBIT-1:0]};
+   assign buf_raddr = {~cache_switch,cache_raddr[`BUF_ADDR_NBIT-1:0]};
    
    always@(posedge clk) begin   
       if(reset) begin
          dout_fst_cp       <= `LOW;
-         buf_rd            <= `LOW;
          cache_raddr       <= {`FFT_NUM_NBIT{1'b1}};
          prev_cache_switch <= `LOW;
       end
@@ -190,33 +185,31 @@ module preproc
          else if(cache_raddr<cache_fft_num) // address range: 0 ~ cache_fft_num
             cache_raddr <= cache_raddr + 1'b1;
          
-         buf_rd <= `LOW;
-         if(cache_raddr<cache_fft_num) // valid when address range 0 ~ cache_fft_num-1
-            buf_rd <= `HIGH;
-            
          if(fft_type) begin // IFFT: pass through
-            if(din_h)
-               dout_fst_cp <= din_s;
+            if(din_h) begin
+               dout_fst_cp   <= din_s;
+            end
          end
          else begin         // FFT: remove cp
-            if(din_v&&(cache_waddr==cache_fft_num-1))
-               dout_fst_cp <= cache_fst_cp;
+            if(din_v&&(cache_waddr==cache_fft_num-1)) begin
+               dout_fst_cp   <= cache_fst_cp  ;
+            end
          end
       end
    end
 
 `ifdef ALTERA
    // ALTERA FFT IP Core Interface
-   reg                      dout_sop;  
+   reg                      buf_rd;
+   reg                      dout_sop  ;  
    reg                      dout_valid;
-   reg  [DATA_NBIT-1:0]     dout_real;      
-   reg  [DATA_NBIT-1:0]     dout_imag;     
-   reg                      dout_eop;
-
-   assign dout_fft_num = cache_fft_num; 
+   reg  [DATA_NBIT-1:0]     dout_real ;
+   reg  [DATA_NBIT-1:0]     dout_imag ;
+   reg                      dout_eop  ;
 
    always@(posedge clk) begin   
       if(reset) begin
+         buf_rd      <= `LOW;
          dout_sop    <= `LOW;
          dout_real   <= 0;
          dout_imag   <= 0;
@@ -224,6 +217,10 @@ module preproc
          dout_eop    <= `LOW;
       end
       else begin
+         buf_rd <= `LOW;
+         if(cache_raddr<cache_fft_num) // valid when address range 0 ~ cache_fft_num-1
+            buf_rd <= `HIGH;
+            
          if(fft_type) begin // IFFT: pass through
             dout_sop   <= buf_wr_en&din_v&~dout_valid;
             dout_real  <= din_i;
@@ -262,21 +259,26 @@ module preproc
          dout_scale    <= 0;
       end
       else begin
+         dout_nfft    <= `FFT_NFFT_2048-fft_num; // 2048 - b01011, 1024 - b01010, 512 - b01001, 256 - b01000, 128 - b00111
+         dout_inv     <= ~fft_type;
+         // shift log2(fft_num)+2 bits
+         case(fft_num)
+            3'd0:    dout_scale <= `FFT_SCH_NBIT'b10_10_10_11_10_01; // 12 bits, shift 12
+            3'd1:    dout_scale <= `FFT_SCH_NBIT'b00_10_10_11_10_10; // 10 bits, shift 11
+            3'd2:    dout_scale <= `FFT_SCH_NBIT'b00_10_10_11_10_01; // 10 bits, shift 10
+            3'd3:    dout_scale <= `FFT_SCH_NBIT'b00_00_10_11_10_10; // 8  bits, shift 9
+            3'd4:    dout_scale <= `FFT_SCH_NBIT'b00_00_10_11_10_01; // 8  bits, shift 8
+            default: dout_scale <= `FFT_SCH_NBIT'b10_10_10_11_10_01;
+         endcase 
          if(fft_type) begin // IFFT: pass through
             dout_nfft_we <= din_h;
-            dout_nfft    <= `FFT_NFFT_2048-num_pat;
             dout_inv_we  <= din_h;
-            dout_inv     <=~fft_type;
             dout_scale_we<= din_h;
-            dout_scale   <= `FFT_SCH_NBIT'hAB9; // shift log2(fft_num)+2 bits
          end
          else begin        // FFT: remove CP
             dout_nfft_we <= cache_switch^prev_cache_switch;
-            dout_nfft    <= `FFT_NFFT_2048-num_pat;
             dout_inv_we  <= cache_switch^prev_cache_switch;
-            dout_inv     <=~fft_type;
             dout_scale_we<= cache_switch^prev_cache_switch;
-            dout_scale   <= `FFT_SCH_NBIT'hAB9; // shift log2(fft_num)+2 bits
          end
       end
    end

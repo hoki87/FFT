@@ -13,7 +13,7 @@
 // 
 //  Revision: 1.0
 
-`define   ALTERA
+//`define   ALTERA
 
 `define   HIGH           1'b1
 `define   LOW            1'b0
@@ -31,5 +31,3 @@
 `define   FFT_SCH_NBIT   12
 `define   FFT_NFFT_NBIT  5
 `define   FFT_NFFT_2048  `FFT_NFFT_NBIT'b01011
-`define   FFT_NFFT_1024  `FFT_NFFT_NBIT'b01010
-`define   FFT_NFFT_512   `FFT_NFFT_NBIT'b01001

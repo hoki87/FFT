@@ -76,7 +76,7 @@
   <parameter name="design_env" value="NATIVE" />
   <parameter name="direction" value="Bi-directional" />
   <parameter name="dsp_resource_opt" value="false" />
-  <parameter name="engine_arch" value="Quad Output" />
+  <parameter name="engine_arch" value="Single Output" />
   <parameter name="hard_fp" value="false" />
   <parameter name="in_order" value="Natural" />
   <parameter name="in_width" value="16" />

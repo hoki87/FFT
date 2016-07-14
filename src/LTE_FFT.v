@@ -17,14 +17,14 @@ revision history:
 module LTE_FFT
     #
     (
-    parameter BIT_WIDTH             = 16,
-    parameter CLK_FS_RATIO          = 5     //Range 5(153.6M/30.72M) or 6(184.32M/30.72M)
+    parameter BIT_WIDTH             = 16
     )
     (
     input                   Reset,
     input                   Clk,
-    input   [1:0]           FFT_num,        //0 - 2048,1 - 1536,2 - 1024,3 - 512 
-    input                   CP_type,        //0 - normal CP, 1 - extended CP
+    input   [2:0]           FFT_num ,       //0 - 2048,1 - 1024,3 - 512,4 - 256, 5 - 128 
+    input   [6:0]           FS_ratio,       //153.6MHz/Fs or 184.32MHz/Fs  
+    input                   CP_type ,       //0 - normal CP, 1 - extended CP
     input                   FFT_type,       //0 - FFT,1 - IFFT
     input   [BIT_WIDTH-1:0] Din_i,
     input   [BIT_WIDTH-1:0] Din_q,
@@ -102,7 +102,6 @@ module LTE_FFT
    
 `ifdef ALTERA
    wire                      preproc_sop;    
-   wire [`FFT_NUM_NBIT-1:0]  preproc_fft_num;
    wire                      preproc_valid;  
    wire [BIT_WIDTH-1:0]      preproc_real;        
    wire [BIT_WIDTH-1:0]      preproc_imag;       
@@ -121,13 +120,13 @@ module LTE_FFT
 `endif
    wire                      preproc_fst_cp;    
    
-   preproc #(BIT_WIDTH,CLK_FS_RATIO)
+   preproc #(BIT_WIDTH)
    preproc_u(
       .clk          (Clk            ),
       .reset        (Reset          ),
       .fft_type     (FFT_type       ),
       .cp_type      (CP_type        ),
-      .num_pat      (FFT_num        ),
+      .fft_num      (FFT_num        ),
       .din_i        (Din_i          ),
       .din_q        (Din_q          ),
       .din_h        (Din_h          ),
@@ -135,7 +134,6 @@ module LTE_FFT
       .din_v        (Din_v          ),
 `ifdef ALTERA
       .dout_sop     (preproc_sop    ),
-      .dout_fft_num (preproc_fft_num),
       .dout_valid   (preproc_valid  ),
       .dout_real    (preproc_real   ),
       .dout_imag    (preproc_imag   ),
@@ -152,17 +150,19 @@ module LTE_FFT
       .dout_xn_re   (preproc_xn_re   ),
       .dout_xn_im   (preproc_xn_im   ),
 `endif
-      .dout_fst_cp (preproc_fst_cp )
+      .dout_fst_cp  (preproc_fst_cp  )
    );
    
    ////////////////// FFT/IFFT   
    
 `ifdef ALTERA  // ALTERA FFT/IFFT IP Core
-   wire                   proc_valid;
-   wire                   proc_sop  ;
-   wire                   proc_eop  ;
-   wire  [BIT_WIDTH-1:0]  proc_real ;
-   wire  [BIT_WIDTH-1:0]  proc_imag ;
+   wire                     proc_valid;
+   wire                     proc_sop  ;
+   wire [BIT_WIDTH-1:0]     proc_real ;
+   wire [BIT_WIDTH-1:0]     proc_imag ;
+   wire [`FFT_NUM_NBIT-1:0] proc_fft_num;
+   
+   assign proc_fft_num = `FFT_NUM_NBIT'd`FFT_MAX_NUM>>FFT_num;
 
 	fft altera_fft (
 		.clk          (Clk            ),   
@@ -174,13 +174,13 @@ module LTE_FFT
 		.sink_eop     (preproc_eop    ),
 		.sink_real    (preproc_real   ),
 		.sink_imag    (preproc_imag   ),
-		.fftpts_in    (preproc_fft_num),
+		.fftpts_in    (proc_fft_num   ),
 		.inverse      (FFT_type       ),
 		.source_valid (proc_valid     ),
 		.source_ready (`HIGH          ),
 		.source_error (),
 		.source_sop   (proc_sop       ),
-		.source_eop   (proc_eop       ),
+		.source_eop   (),
 		.source_real  (proc_real      ),
 		.source_imag  (proc_imag      ),
 		.fftpts_out   ()
@@ -220,32 +220,31 @@ module LTE_FFT
 `endif
 
    ////////////////// Post processing
-   
-   postproc #(BIT_WIDTH,CLK_FS_RATIO)
+   postproc #(BIT_WIDTH)
    postproc_u (
-      .clk       (Clk           ),
-      .reset     (Reset         ),
-      .fft_type  (FFT_type      ),
-      .cp_type   (CP_type       ),
-      .num_pat   (FFT_num       ),
+      .clk      (Clk           ),
+      .reset    (Reset         ),
+      .fft_type (FFT_type      ),
+      .cp_type  (CP_type       ),
+      .fft_num  (FFT_num       ),
+      .fs_ratio (FS_ratio      ),
+      .fst_cp   (preproc_fst_cp),
 `ifdef ALTERA
-      .din_sop   (proc_sop      ),
-      .din_valid (proc_valid    ),
-      .din_real  (proc_real     ),
-      .din_imag  (proc_imag     ),
-      .din_eop   (proc_eop      ),
-`else
-      .din_done  (proc_done     ),
-      .din_dv    (proc_dv       ),
-      .din_xk_re (proc_xk_re    ),
-      .din_xk_im (proc_xk_im    ),
-`endif
-      .din_fst_cp(preproc_fst_cp),
-      .dout_i    (Dout_i        ),
-      .dout_q    (Dout_q        ),
-      .dout_h    (Dout_h        ),
-      .dout_s    (Dout_s        ),
-      .dout_v    (Dout_v        )
+      .din_sop  (proc_sop      ),
+      .din_valid(proc_valid    ),
+      .din_real (proc_real     ),
+      .din_imag (proc_imag     ),
+`else                          
+      .din_done (proc_done     ),
+      .din_dv   (proc_dv       ),
+      .din_xk_re(proc_xk_re    ),
+      .din_xk_im(proc_xk_im    ),
+`endif                         
+      .dout_i   (Dout_i        ),
+      .dout_q   (Dout_q        ),
+      .dout_h   (Dout_h        ),
+      .dout_s   (Dout_s        ),
+      .dout_v   (Dout_v        )
    );   
 
 endmodule
