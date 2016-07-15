@@ -40,7 +40,7 @@ do {xilinx_wave.do}
 #
 # Run simulation for this time
 #
-run 400us
+run 4.5ms
 #
 # End
 #

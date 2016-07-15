@@ -133,6 +133,7 @@ module postproc
          
          if(p_din_v&~din_v&buf_wr_en) begin
             buf_wr_en      <= `LOW;
+            cache_waddr    <= 0;
             cache_switch   <= ~cache_switch; // switch ram bank when eop
             cache_fst_cp   <= fst_cp;
             // Latch CP number & FFT number
@@ -169,12 +170,12 @@ module postproc
    ////////////////// CP INSERT & SYMBOL READ
    reg                        buf_rd_cp_en; // read cp enable
    reg                        buf_rd_sb_en; // read symbol enable
-   wire                       buf_rd;
+   wire                       buf_rd_en;
    reg  [6:0]                 buf_rd_cnt;
    reg  [`FFT_NUM_NBIT-1:0]   cache_raddr;
    reg                        prev_cache_switch;
    
-   assign buf_rd = (buf_rd_cp_en|buf_rd_sb_en)&(buf_rd_cnt==cache_fs_ratio-1);
+   assign buf_rd_en = buf_rd_cp_en|buf_rd_sb_en;
    assign buf_raddr = {~cache_switch,cache_raddr[`BUF_ADDR_NBIT-1:0]};
    
    always@(posedge clk) begin
@@ -200,7 +201,7 @@ module postproc
             cache_raddr   <= cache_fft_num - cache_cp_num; // CP ADDRESS: (cache_fft_num - cache_cp_num) ~ cache_fft_num-1
             buf_rd_cnt    <= 0;
          end
-         else if(buf_rd) begin
+         else if(buf_rd_en&(buf_rd_cnt==cache_fs_ratio-1)) begin
             cache_raddr <= cache_raddr + 1'b1;
             if(cache_raddr==cache_fft_num-1'b1) begin 
                buf_rd_cp_en <= `LOW;
@@ -219,7 +220,7 @@ module postproc
    reg [DATA_NBIT-1:0]  dout_q;  // Q path data output
    reg [DATA_NBIT-1:0]  p_din_i;
    reg [DATA_NBIT-1:0]  p_din_q;
-   reg [1:0]            p_buf_rd;
+   reg                  p_buf_rd;
    reg [1:0]            p_switch;
    
    always@(posedge clk) begin
@@ -232,14 +233,14 @@ module postproc
          dout_v   <= `LOW;
          dout_i   <= 0;
          dout_q   <= 0;
-         p_buf_rd <= 0;
+         p_buf_rd <= `LOW;
          p_switch <= 0;
       end
       else begin
          p_din_v  <= din_v;
          p_din_i  <= din_i;
          p_din_q  <= din_q;
-         p_buf_rd <= {p_buf_rd[0],buf_rd};
+         p_buf_rd <= buf_rd_en&(buf_rd_cnt==0);
          p_switch <= {p_switch[0],cache_switch^prev_cache_switch};
          if(~fft_type) begin // FFT: pass through
             dout_h  <= din_v&~p_din_v;
@@ -251,7 +252,7 @@ module postproc
          else begin // IFFT: insert CP
             dout_h <= p_switch[1];
             dout_s <= p_switch[1]&&cache_fst_cp;
-            dout_v <= p_buf_rd[1];
+            dout_v <= p_buf_rd;
             dout_i <= buf_rdata[DATA_NBIT*2-1:DATA_NBIT];
             dout_q <= buf_rdata[DATA_NBIT-1:0];
          end

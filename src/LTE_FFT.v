@@ -156,25 +156,31 @@ module LTE_FFT
    ////////////////// FFT/IFFT   
    
 `ifdef ALTERA  // ALTERA FFT/IFFT IP Core
-   wire                     proc_valid;
-   wire                     proc_sop  ;
-   wire [BIT_WIDTH-1:0]     proc_real ;
-   wire [BIT_WIDTH-1:0]     proc_imag ;
-   wire [`FFT_NUM_NBIT-1:0] proc_fft_num;
+   wire [`FFT_NUM_NBIT-1:0] preproc_fft_num;
    
-   assign proc_fft_num = `FFT_NUM_NBIT'd`FFT_MAX_NUM>>FFT_num;
+   assign preproc_fft_num = `FFT_NUM_NBIT'd`FFT_MAX_NUM>>FFT_num;
+
+   wire                 proc_valid;
+   wire                 proc_sop  ;
+   `ifdef SCALE
+   wire [BIT_WIDTH+`FFT_NUM_NBIT-1:0] proc_real ;
+   wire [BIT_WIDTH+`FFT_NUM_NBIT-1:0] proc_imag ;
+   `else
+   wire [BIT_WIDTH-1:0] proc_real ;
+   wire [BIT_WIDTH-1:0] proc_imag ;
+   `endif      
 
 	fft altera_fft (
 		.clk          (Clk            ),   
 		.reset_n      (~Reset         ),
 		.sink_valid   (preproc_valid  ),
 		.sink_ready   (),
-		.sink_error   (2'b00          ),
+		.sink_error   (2'b00          ), 
 		.sink_sop     (preproc_sop    ),
 		.sink_eop     (preproc_eop    ),
 		.sink_real    (preproc_real   ),
 		.sink_imag    (preproc_imag   ),
-		.fftpts_in    (proc_fft_num   ),
+		.fftpts_in    (preproc_fft_num),
 		.inverse      (FFT_type       ),
 		.source_valid (proc_valid     ),
 		.source_ready (`HIGH          ),
@@ -220,6 +226,22 @@ module LTE_FFT
 `endif
 
    ////////////////// Post processing
+   wire [BIT_WIDTH-1:0] proc_i;
+   wire [BIT_WIDTH-1:0] proc_q;
+
+`ifdef ALTERA
+   `ifdef SCALE
+   assign proc_i = proc_real>>(`FFT_NUM_NBIT-FFT_num); // LSBs are truncated, round is not implemented
+   assign proc_q = proc_imag>>(`FFT_NUM_NBIT-FFT_num); // LSBs are truncated, round is not implemented
+   `else
+   assign proc_i = proc_real;
+   assign proc_q = proc_imag;   
+   `endif
+`else
+   assign proc_i = proc_xk_re;
+   assign proc_q = proc_xk_im;
+`endif
+
    postproc #(BIT_WIDTH)
    postproc_u (
       .clk      (Clk           ),
@@ -232,13 +254,13 @@ module LTE_FFT
 `ifdef ALTERA
       .din_sop  (proc_sop      ),
       .din_valid(proc_valid    ),
-      .din_real (proc_real     ),
-      .din_imag (proc_imag     ),
+      .din_real (proc_i        ),
+      .din_imag (proc_q        ),
 `else                          
       .din_done (proc_done     ),
       .din_dv   (proc_dv       ),
-      .din_xk_re(proc_xk_re    ),
-      .din_xk_im(proc_xk_im    ),
+      .din_xk_re(proc_i        ),
+      .din_xk_im(proc_q        ),
 `endif                         
       .dout_i   (Dout_i        ),
       .dout_q   (Dout_q        ),

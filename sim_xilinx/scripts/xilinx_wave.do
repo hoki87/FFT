@@ -67,7 +67,6 @@ add wave -noupdate /fft_tb/IFFT/postproc_u/cache_fst_cp
 add wave -noupdate /fft_tb/IFFT/postproc_u/BUFFER
 add wave -noupdate /fft_tb/IFFT/postproc_u/buf_rd_cp_en
 add wave -noupdate /fft_tb/IFFT/postproc_u/buf_rd_sb_en
-add wave -noupdate /fft_tb/IFFT/postproc_u/buf_rd
 add wave -noupdate -radix unsigned /fft_tb/IFFT/postproc_u/buf_rd_cnt
 add wave -noupdate /fft_tb/IFFT/postproc_u/prev_cache_switch
 add wave -noupdate -radix unsigned /fft_tb/IFFT/postproc_u/buf_raddr
@@ -132,7 +131,7 @@ add wave -noupdate /fft_tb/FFT/postproc_u/dout_v
 add wave -noupdate -radix decimal /fft_tb/FFT/postproc_u/dout_i
 add wave -noupdate -radix decimal /fft_tb/FFT/postproc_u/dout_q
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {3887765000 ps} 0} {{Cursor 2} {3658995000 ps} 0} {{Cursor 3} {2908595000 ps} 0}
+WaveRestoreCursors {{Cursor 1} {3887765000 ps} 0} {{Cursor 2} {3885845000 ps} 0} {{Cursor 3} {2244645000 ps} 0}
 quietly wave cursor active 3
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 80
@@ -148,4 +147,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ps} {4200 us}
+WaveRestoreZoom {0 ps} {4725 us}

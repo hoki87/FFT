@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2016-07-14T15:12:09</DateModified>
+  <DateModified>2016-07-15T09:27:37</DateModified>
   <ModuleName>LTE_FFT</ModuleName>
-  <SummaryTimeStamp>2016-07-14T13:16:41</SummaryTimeStamp>
+  <SummaryTimeStamp>2016-07-15T09:25:06</SummaryTimeStamp>
   <SavedFilePath>X:/LTEFFT/LTE_FFT/sim_xilinx/prj/iseconfig/LTE_FFT.xreport</SavedFilePath>
   <ImplementationReportsDirectory>X:/LTEFFT/LTE_FFT/sim_xilinx/prj\</ImplementationReportsDirectory>
   <DateInitialized>2016-06-14T19:59:03</DateInitialized>

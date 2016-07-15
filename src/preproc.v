@@ -92,10 +92,11 @@ module preproc
    reg                         cache_switch;  // ping pang ram switch                     
    reg  [`FFT_NUM_NBIT-1:0]    cache_waddr;
    reg                         buf_wr_en;
-   reg                         buf_wr;
+   wire                        buf_wr;
    wire [`BUF_ADDR_NBIT:0]     buf_waddr;
    wire [DATA_NBIT*2-1:0]      buf_wdata; // {data_i,data_q}
   
+   assign buf_wr    = din_v&buf_wr_en;
    assign buf_waddr = {cache_switch,cache_waddr[`BUF_ADDR_NBIT-1:0]};
    assign buf_wdata = {din_i,din_q};
    
@@ -107,24 +108,19 @@ module preproc
          cache_switch  <= `LOW;
          cache_waddr   <= 0;
          buf_wr_en     <= `LOW;
-         buf_wr        <= `LOW;
       end
       else begin
-         buf_wr <= `LOW;
          if(din_v) begin
             cache_waddr <= cache_waddr + 1'b1;
             if(~buf_wr_en) begin // remove CP
                if(cache_waddr==cache_cp_num-1) begin
                   buf_wr_en   <= `HIGH;
-                  buf_wr      <= `HIGH;
                   cache_waddr <= 0;
                end
             end
             else begin // pass valid data
-               buf_wr <= `HIGH;
                if(cache_waddr==cache_fft_num-1) begin
                   buf_wr_en    <= `LOW;
-                  buf_wr       <= `LOW;
                   cache_waddr  <= 0;
                   cache_switch <= ~cache_switch; // switch ram bank after cache all data
                end
@@ -144,6 +140,8 @@ module preproc
             end
             cache_fst_cp   <= din_s;
             cache_waddr    <= 0;
+            if(din_v)
+               cache_waddr <= `FFT_NUM_NBIT'd1;
             buf_wr_en      <= fft_type;
          end
       end
@@ -248,6 +246,7 @@ module preproc
    reg [`FFT_SCH_NBIT-1:0]  dout_scale;    // scale schedule output
    reg [DATA_NBIT-1:0]      dout_xn_re;    // real data output
    reg [DATA_NBIT-1:0]      dout_xn_im;    // imag data output
+   reg                      p_cache_switch;
    
    always@* begin
       if(reset) begin
@@ -285,20 +284,22 @@ module preproc
    
    always@(posedge clk) begin
       if(reset) begin
-         dout_start    <= `LOW;
-         dout_xn_re    <= 0;
-         dout_xn_im    <= 0;
+         dout_start     <= `LOW;
+         dout_xn_re     <= 0;
+         dout_xn_im     <= 0;  
+         p_cache_switch <= `LOW;
       end
       else begin
+         p_cache_switch <= cache_switch^prev_cache_switch;    
          if(fft_type) begin // IFFT: pass through
-            dout_start   <= din_h;
-            dout_xn_re   <= din_i;
-            dout_xn_im   <= din_q;
+            dout_start  <= din_h;
+            dout_xn_re  <= din_i;
+            dout_xn_im  <= din_q;
          end
-         else begin         // FFT: remove cp
-            dout_start   <= cache_switch^prev_cache_switch;
-            dout_xn_re   <= buf_rdata[DATA_NBIT*2-1:DATA_NBIT];
-            dout_xn_im   <= buf_rdata[DATA_NBIT-1:0];         
+         else begin        // FFT: remove cp
+            dout_start  <= p_cache_switch;
+            dout_xn_re  <= buf_rdata[DATA_NBIT*2-1:DATA_NBIT];
+            dout_xn_im  <= buf_rdata[DATA_NBIT-1:0];         
          end
       end
    end

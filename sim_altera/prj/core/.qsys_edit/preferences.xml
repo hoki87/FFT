@@ -8,10 +8,10 @@
   </columns>
  </systemtable>
  <library expandedCategories="Library,Project" />
- <window width="437" height="623" x="321" y="187" />
+ <window width="1100" height="800" x="0" y="0" />
  <generation
    greybox="0"
-   path="X:/LTEFFT/"
+   path="X:/LTEFFT/LTE_FFT/src/core/altera"
    testbench_system="STANDARD"
    simulation="VERILOG"
    block_symbol_file="0" />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="fft" kind="system" version="15.1" fabric="QSYS">
  <!-- Format version 15.1 185 (Future versions may contain additional information.) -->
- <!-- 2016.06.22.10:21:20 -->
+ <!-- 2016.07.15.10:55:48 -->
  <!-- A collection of modules and connections -->
  <parameter name="clockCrossingAdapter">
   <type>com.altera.sopcmodel.ensemble.EClockAdapter</type>
@@ -53,7 +53,7 @@
  </parameter>
  <parameter name="generationId">
   <type>int</type>
-  <value>1466562079</value>
+  <value>1468551347</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>true</visible>
@@ -257,7 +257,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="engine_arch">
    <type>java.lang.String</type>
-   <value>Quad Output</value>
+   <value>Single Output</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -644,5 +644,5 @@ parameters are a RESULT of the module parameters. -->
   <version>15.1</version>
  </plugin>
  <reportVersion>15.1 185</reportVersion>
- <uniqueIdentifier>000C29F9E66A0000015575E96D15</uniqueIdentifier>
+ <uniqueIdentifier>000C29F9E66A00000155EC7B3CE7</uniqueIdentifier>
 </EnsembleReport>

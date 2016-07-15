@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 15.1 185 win32 2016.06.22.10:21:19
+# ACDS 15.1 185 win32 2016.07.15.10:55:46
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -54,7 +54,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 15.1 185 win32 2016.06.22.10:21:19
+# ACDS 15.1 185 win32 2016.07.15.10:55:46
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="fft"

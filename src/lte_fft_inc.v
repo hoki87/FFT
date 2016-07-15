@@ -13,7 +13,9 @@
 // 
 //  Revision: 1.0
 
-//`define   ALTERA
+`define   ALTERA
+
+//`define   SCALE
 
 `define   HIGH           1'b1
 `define   LOW            1'b0

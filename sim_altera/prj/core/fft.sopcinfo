@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="fft" kind="fft" version="1.0" fabric="QSYS">
  <!-- Format version 15.1 185 (Future versions may contain additional information.) -->
- <!-- 2016.06.22.16:15:59 -->
+ <!-- 2016.07.15.10:55:47 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1466583359</value>
+  <value>1468551347</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -205,7 +205,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="engine_arch">
    <type>java.lang.String</type>
-   <value>Quad Output</value>
+   <value>Single Output</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
